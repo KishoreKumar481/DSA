@@ -1,9 +1,9 @@
-def rotateRight(arr, n, k):
-    n = len(arr)
-    arr[:] = arr[-k:] + arr[:-k]
-    return arr
+def rightRotateArray(a, d):
+    n = len(a)
+    d = d % n 
+    a[:] = a[d:] + a[:d]
+    return a
 
 arr = [1, 2, 3, 4, 5, 6, 7]
-n = len(arr)
-k = 3
-print(rotateRight(arr, n, k))
+d = 3
+print(rightRotateArray(arr, d)) # [5, 6, 7, 1, 2, 3, 4]
