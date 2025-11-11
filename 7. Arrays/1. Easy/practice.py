@@ -1,9 +1,6 @@
-def rightRotateArray(a, d):
+def getSingleElement(a):
     n = len(a)
-    d = d % n 
-    a[:] = a[d:] + a[:d]
-    return a
 
-arr = [1, 2, 3, 4, 5, 6, 7]
-d = 3
-print(rightRotateArray(arr, d)) # [5, 6, 7, 1, 2, 3, 4]
+a = [1, 1, 2, 3, 3, 4, 4]
+ans = getSingleElement(a)
+print(f"The single element is {ans}") # 2
