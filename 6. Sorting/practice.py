@@ -1,34 +1,24 @@
-def merge(arr, low, mid, high):
-    temp = []
-    left = low
-    right = mid + 1
-    while left <= mid and right <= high:
-        if arr[left] <= arr[right]:
-            temp.append(arr[left])
-            left += 1
-        else:
-            temp.append(arr[right])
-            right += 1
+def quickSort(a, low, high):
+    if low < high:
+        p = partition(a, low, high)
+        quickSort(a, low, p - 1)
+        quickSort(a, p + 1, high)
 
-    while left <= mid:
-        temp.append(arr[left])
-        left += 1
+def partition(a, low, high):
+    pivot = a[low]
+    i = low
+    j = high
+    while i < j:
+        while a[i] <= pivot and i < high:
+            i += 1
+        while a[j] > pivot and j > low:
+            j -= 1
+        if i < j:
+            a[i], a[j] = a[j], a[i]
+    a[low], a[j] = a[j], a[low]
+    return j
 
-    while right <= high:
-        temp.append(arr[right])
-        right += 1
-    
-    for i in range(low, high + 1): 
-        arr[i] = temp[i - low]
-
-def merge_sort(arr, low, high):
-    if low >= high:
-        return
-    mid = (low + high) // 2
-    merge_sort(arr, low, mid)
-    merge_sort(arr, mid + 1, high)
-    merge(arr, low, mid, high)
-
-arr = [9, 4, 7, 6, 3, 1, 5]
-merge_sort(arr, 0, len(arr) - 1)
-print(arr)
+a = [4, 6, 2, 5, 7, 9, 1, 3]
+print(f"Unsorted array: {a}")
+quickSort(a, 0, len(a) - 1)
+print(f"Sorted array: {a}")

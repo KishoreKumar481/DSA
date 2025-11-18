@@ -8,7 +8,6 @@ def bubble_sort(arr):
                 didSwap = 1
         if didSwap == 0:
             break
-        print('runs')
 
 arr = [6, 5, 4, 3, 2, 1]
 bubble_sort(arr)

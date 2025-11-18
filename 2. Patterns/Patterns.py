@@ -120,7 +120,7 @@ def print13(n):
             print(num, end=' ')
             num += 1
         print()
-             
+
 def print14(n):
     for i in range(n):
         for j in range(i + 1):
@@ -241,5 +241,5 @@ def print22(n):
             print(n - min(min(top, down), min(left, right)), end='')
         print()
 
-n = 3
+n = 4
 print22(n)

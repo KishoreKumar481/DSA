@@ -36,4 +36,4 @@ def merge_sort(arr, low, high):
 
 arr = [9, 4, 7, 6, 3, 1, 5]
 merge_sort(arr, 0, len(arr) - 1) # len - 1 bc of how arr work in python eg., here 0 to 6 if there is no -1 it will be 0 to 7 which makes the length 8
-print("Sorted array:", arr)
+print("Sorted array:", arr) # Sorted array: [1, 3, 4, 5, 6, 7, 9]
