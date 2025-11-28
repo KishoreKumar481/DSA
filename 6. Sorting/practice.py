@@ -1,24 +1,13 @@
-def quickSort(a, low, high):
-    if low < high:
-        p = partition(a, low, high)
-        quickSort(a, low, p - 1)
-        quickSort(a, p + 1, high)
+def insertion_sort(a, i, n):
+    if i == n:
+        return
+    j = i
+    while j > 0 and a[j - 1] > a[j]:
+        a[j - 1], a[j] = a[j], a[j - 1]
+        j -= 1
+    insertion_sort(a, i + 1, n)
 
-def partition(a, low, high):
-    pivot = a[low]
-    i = low
-    j = high
-    while i < j:
-        while a[i] <= pivot and i < high:
-            i += 1
-        while a[j] > pivot and j > low:
-            j -= 1
-        if i < j:
-            a[i], a[j] = a[j], a[i]
-    a[low], a[j] = a[j], a[low]
-    return j
-
-a = [4, 6, 2, 5, 7, 9, 1, 3]
-print(f"Unsorted array: {a}")
-quickSort(a, 0, len(a) - 1)
-print(f"Sorted array: {a}")
+arr = [6, 5, 4, 3, 2, 1]
+n = len(arr)
+insertion_sort(arr, 0, n)
+print(arr)
