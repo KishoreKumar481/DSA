@@ -1,22 +1,9 @@
-def getLongestSubArray(arr, k):
-    n = len(a)
-    r, l = 0, 0
-    s = a[0]
-    ml = 0
-    while r < n:
-        while l <= r and s > k:
-            s -= a[l]
-            l += 1
+def rotateArray(a, n, d):
+    d = d % n
+    a = a[d:] + a[:d]
+    return a
 
-        if s == k:
-            ml = max(ml, r - l + 1)
-
-        r += 1
-        if r < n:
-            s += a[r]
-    return ml
-
-a = [1, 2, 3, 1, 1, 1, 1, 3, 3]
-k = 6
-
-print(getLongestSubArray(a, k)) # 4
+arr = [1, 2, 3, 4, 5, 6, 7]
+n = len(arr)
+d = 3
+print(rotateArray(arr, n, d)) # [4, 5, 6, 7, 1, 2, 3]
