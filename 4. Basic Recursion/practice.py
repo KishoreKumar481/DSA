@@ -1,8 +1,7 @@
-def f(i, n):
-    if i > n:
-        return
-    f(i + 1, n)
-    print(i)
+def fact(n):
+    if n == 0:
+        return 1
+    return n * fact(n - 1)
 
-n = 3
-f(1, n)
+n = 10
+print(fact(n))
