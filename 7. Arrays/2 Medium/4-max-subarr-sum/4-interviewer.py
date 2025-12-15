@@ -2,6 +2,9 @@ def maxSubArr(a):
     n = len(a)
     sum = 0
     maxi = float('-inf')
+    start = 0
+    ansStart = -1
+    ansEnd = -1
     for i in range(n):
         if sum == 0:
             start = i
@@ -12,7 +15,8 @@ def maxSubArr(a):
             ansEnd = i
         if sum < 0:
             sum = 0
-    return a[ansStart:ansEnd + 1]
+    return a[ansStart: ansEnd + 1]
+
 
 a = [-2, -3, 4, -1, -2, 1, 5, -3]
 print(maxSubArr(a)) # [4, -1, -2, 1, 5]
