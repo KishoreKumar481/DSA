@@ -1,9 +1,14 @@
-def pattern18(n):
-    first = 65 + n - 1
-    for i in range(n):
-        for j in range(i + 1):
-            print(chr(first - i + j), end=' ')
-        print()
-n = 4
-pattern18(n)
+def binarySearch(a, low, high, tar):
+    if low > high:
+        return -1
+    mid = (low + high) // 2
+    if tar == a[mid]:
+        return mid
+    elif tar > a[mid]:
+        return binarySearch(a, mid + 1, high, tar)
+    else:
+        return binarySearch(a, low, mid - 1, tar)
 
+a = [3, 4, 6, 7, 9, 12, 16, 17]
+target = 6
+print(binarySearch(a, 0, len(a) - 1, target))
