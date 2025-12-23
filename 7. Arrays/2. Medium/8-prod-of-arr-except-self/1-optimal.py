@@ -11,5 +11,6 @@ def productExceptSelf(nums):
         postfix = postfix * nums[i]
     return res
 
+
 nums = [1, 2, 3, 4]
 print(productExceptSelf(nums))  # [24, 12, 8, 6]
