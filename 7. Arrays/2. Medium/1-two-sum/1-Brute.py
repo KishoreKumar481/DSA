@@ -11,7 +11,7 @@ def two_sum_indices(a, tar):
     for i in range(n):
         for j in range(i + 1, n):
             if a[i] + a[j] == tar:
-                return [i, j]
+                return [i + 1, j + 1]
     return [-1, -1]
 
 arr = [2, 6, 5, 8, 11]

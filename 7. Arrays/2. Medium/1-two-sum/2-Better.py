@@ -12,8 +12,8 @@ def two_sum_indices(a, tar):
     for i, num in enumerate(a):
         complement = tar - num
         if complement in dic:
-            return [dic[complement], i]
-        dic[num] = i
+            return [dic[complement], i + 1]
+        dic[num] = i + 1
     return [-1, -1]
 
 a = [2, 6, 5, 8, 11]

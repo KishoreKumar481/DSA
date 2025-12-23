@@ -11,7 +11,7 @@ def topKFrequent(nums, k):
     for i in range(len(freq) - 1, 0, -1):
         for num in freq[i]:
             res.append(num)
-            if len(res) == 2:
+            if len(res) == k:
                 return res
 
 nums = [1,1,1,2,2,3]
