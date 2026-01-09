@@ -1,7 +1,7 @@
 def countFreq(arr, n):
     visited = [False] * n
     for i in range(n):
-        if visited[i] == True:
+        if visited[i] is True:
             continue
         count = 1
         for j in range(i + 1, n):
