@@ -5,7 +5,7 @@ def binarySearch(a, tar):
         mid = (low + high) // 2
         if a[mid] == tar:
             return True
-        elif tar > a[mid]:
+        if tar > a[mid]:
             low = mid + 1
         else:
             high = mid - 1

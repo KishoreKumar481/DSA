@@ -12,7 +12,7 @@ def searchMatrix(matrix, tar):
 
         if matrix[row][col] == tar:
             return True
-        elif matrix[row][col] < tar:
+        if matrix[row][col] < tar:
             low = mid + 1
         else:
             high = mid - 1

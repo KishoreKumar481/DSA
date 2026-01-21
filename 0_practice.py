@@ -9,3 +9,4 @@ def Frequency(arr, n):
 arr = [10, 5, 10, 15, 10, 5]
 n = len(arr)
 Frequency(arr, n)
+
