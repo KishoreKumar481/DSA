@@ -1,12 +1,12 @@
-def Frequency(arr, n):
-    dic = {}
-    for num in arr:
-        dic[num] = dic.get(num, 0) + 1
+def insertion_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        j = i
+        while j > 0 and arr[j] < arr[j - 1]:
+            arr[j], arr[j - 1] = arr[j - 1], arr[j]
+            j -= 1
 
-    for num, count in dic.items():
-        print(num, count)
 
-arr = [10, 5, 10, 15, 10, 5]
-n = len(arr)
-Frequency(arr, n)
-
+arr = [6, 5, 4, 3, 2, 1]
+insertion_sort(arr)
+print(arr)
